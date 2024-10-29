@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Використання циклу FOR IN</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        pre {
+            text-align: left;
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: #f9f9f9;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Демонстрація циклу FOR IN</h1>
+    <button onclick="displayProperties()">Показати властивості документу</button>
+    <button onclick="clearOutput()">Очистити</button>
+    
+    <h2>Властивості документу:</h2>
+    <pre id="output"></pre>
+
+    <script>
+        function displayProperties() {
+            let propertyInfo = "";
+            for (let propertyName in document) {
+                propertyInfo += propertyName + " - " + document[propertyName] + "\n";
+            }
+            document.getElementById("output").innerText = propertyInfo;
+        }
+
+        function clearOutput() {
+            document.getElementById("output").innerText = "";
+        }
+    </script>
+</body>
+</html>
